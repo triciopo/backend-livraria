@@ -29,7 +29,7 @@ public class AutorController {
         if (nome == null || nome.isBlank())
             return autorRepository.findAll();
 
-        return autorRepository.getAllByNome(nome);
+        return autorRepository.getAllByNomeContainsIgnoreCase(nome);
     }
 
     @GetMapping(path="{id}")

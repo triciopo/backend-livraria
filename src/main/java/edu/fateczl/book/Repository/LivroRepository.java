@@ -7,4 +7,6 @@ public interface LivroRepository extends CrudRepository<Livro, Long> {
     Iterable<Livro> getAllByTitulo(String titulo);
 
     Object getById(Long id);
+
+    Iterable<Livro> getAllByTituloContainsIgnoreCase(String titulo);
 }

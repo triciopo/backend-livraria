@@ -7,4 +7,6 @@ public interface CategoriaRepository extends CrudRepository<Categoria, Long> {
     Iterable<Categoria> getAllByNome(String nome);
 
     Object getById(Long id);
+
+    Iterable<Categoria> getAllByNomeContainsIgnoreCase(String nome);
 }

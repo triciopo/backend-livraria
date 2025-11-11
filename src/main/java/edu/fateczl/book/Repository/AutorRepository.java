@@ -7,4 +7,6 @@ public interface AutorRepository extends CrudRepository<Autor, Long> {
     Iterable<Autor> getAllByNome(String nome);
 
     Object getById(Long id);
+
+    Iterable<Autor> getAllByNomeContainsIgnoreCase(String nome);
 }

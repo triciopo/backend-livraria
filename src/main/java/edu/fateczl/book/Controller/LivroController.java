@@ -28,7 +28,7 @@ public class LivroController {
         if (titulo == null || titulo.isBlank())
             return livroRepository.findAll();
 
-        return livroRepository.getAllByTitulo(titulo);
+        return livroRepository.getAllByTituloContainsIgnoreCase(titulo);
     }
 
     @GetMapping(path="/{id}")

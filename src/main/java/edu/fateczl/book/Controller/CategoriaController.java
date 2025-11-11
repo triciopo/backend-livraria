@@ -4,7 +4,6 @@ import edu.fateczl.book.DTO.UpdateCategoriaDTO;
 import edu.fateczl.book.Models.Categoria;
 import edu.fateczl.book.Repository.CategoriaRepository;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -28,7 +27,7 @@ public class CategoriaController {
         if (nome == null || nome.isBlank())
             return categoriaRepository.findAll();
 
-        return categoriaRepository.getAllByNome(nome);
+        return categoriaRepository.getAllByNomeContainsIgnoreCase(nome);
     }
 
     @GetMapping(path="{id}")
