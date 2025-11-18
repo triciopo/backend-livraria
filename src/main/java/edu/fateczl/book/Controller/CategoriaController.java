@@ -58,5 +58,11 @@ public class CategoriaController {
         categoriaRepository.deleteById(id);
         return true;
     }
+
+    @GetMapping(path="/atualizarpreco")
+    public @ResponseBody Boolean AtualizarPrecoCategoria(@RequestParam Long categoriaId, @RequestParam Double percentual) {
+        categoriaRepository.atualizarPrecoCategoria(categoriaId, percentual);
+        return true;
+    }
 }
 
